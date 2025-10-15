@@ -7,19 +7,23 @@ include 'includes/header.php';
 $header_config = [
     'title' => 'Our Services',
     'subtitle' => 'Comprehensive emergency care solutions designed to transform healthcare delivery and save lives through innovation, technology, and expertise',
-    'background_image' => 'assets/images/equipment/StockCake-Advanced Medical Equipment_1758320664.jpg',
+    'background_image' => 'assets/images/util/favicon.png',
     'icon' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>',
     'badge_text' => 'Professional Services',
     'gradient_from' => 'primary-teal',
     'gradient_via' => 'indigo-900',
-    'gradient_to' => 'purple-900'
+    'gradient_to' => 'purple-900',
+    // Make the favicon watermark visible on this page header (match About)
+    'background_opacity' => 0.5,
+    'background_size' => '50vw',
+    'background_repeat' => 'no-repeat'
 ];
 include 'includes/page-header.php';
 ?>
 
 <!-- Services Overview -->
 <section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-watermark">
         <div class="text-center mb-16 fade-in">
             <h2 class="text-4xl font-bold text-gray-900 mb-4">Transforming Emergency Care</h2>
             <p class="text-xl text-gray-600 max-w-4xl mx-auto">

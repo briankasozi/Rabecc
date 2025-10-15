@@ -131,5 +131,17 @@
         console.log('%cIf someone told you to copy-paste something here, it is a scam and will give them access to your information.', 'color: red; font-size: 16px;');
     </script>
 </head>
-<body class="bg-white text-gray-800">
+<?php
+// Add a 'with-watermark' class to body on all pages except the homepage (index.php)
+$currentScript = basename($_SERVER['SCRIPT_NAME']);
+$bodyClasses = 'bg-white text-gray-800';
+if ($currentScript !== 'index.php') {
+    $bodyClasses .= ' with-watermark';
+    // Give the About, Services and Why-Choose pages a stronger watermark treatment
+    if (in_array($currentScript, ['about.php', 'services.php', 'why-choose-us.php'])) {
+        $bodyClasses .= ' with-watermark-strong';
+    }
+}
+?>
+<body class="<?php echo $bodyClasses; ?>">
     <?php include 'includes/nav.php'; ?>

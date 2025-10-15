@@ -1,150 +1,44 @@
 <!-- Split Screen Hero Slider -->
-<section class="split-screen-slider relative h-screen overflow-hidden" id="splitSlider">
-<!-- Simplified Split Screen Hero Slider -->
 <section id="splitSlider" class="split-screen-slider relative w-full h-screen overflow-hidden" aria-label="Hero split slider">
-    <!-- Slides container -->
-    <div class="slides w-full h-full relative">
-
-        <!-- Slide 1 -->
-        <article class="split-slide active flex w-full h-full" data-slide="0" role="group" aria-roledescription="slide" aria-label="Emergency Care Excellence">
-            <!-- Left image (use <img> for reliability) -->
-            <figure class="half left w-1/2 relative overflow-hidden m-0">
-                <img src="assets/images/equipment/StockCake-Hospital Room Interior_1758320687.jpg" alt="Hospital room" class="slide-bg w-full h-full object-cover absolute inset-0">
-                <div class="overlay absolute inset-0 bg-gradient-to-r from-transparent to-black/30 pointer-events-none"></div>
-                <figcaption class="sr-only">Hospital interior</figcaption>
-            </figure>
-
-            <!-- Right content -->
-            <div class="half right w-1/2 bg-white flex items-center justify-center p-10">
-                <div class="text-center max-w-lg">
-                    <span class="inline-block px-4 py-2 bg-primary-green/10 text-primary-green rounded-full text-sm font-semibold mb-4">Medical Excellence</span>
-                    <h1 class="hero-title text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                        Emergency
-                        <span class="block">Care</span>
-                        Excellence
-                    </h1>
-                    <p class="text-xl text-gray-700 mb-8 leading-relaxed">Advanced medical technology solutions and professional consultancy services for modern healthcare facilities.</p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="services" class="btn-primary px-8 py-4 rounded-full font-bold">Explore Services</a>
-                        <a href="contact" class="btn-secondary px-8 py-4 rounded-full font-bold">Get Started</a>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <!-- Slide 2 -->
-        <article class="split-slide flex w-full h-full" data-slide="1" role="group" aria-roledescription="slide" aria-label="Equipment Solutions">
-            <div class="half left w-1/2 bg-white flex items-center justify-center p-10">
-                <div class="text-center max-w-lg">
-                    <span class="inline-block px-4 py-2 bg-green-600/10 text-green-700 rounded-full text-sm font-semibold mb-4">Equipment Solutions</span>
-                    <h1 class="hero-title text-5xl md:text-6xl font-bold mb-6 leading-tight">Medical<br><span class="block">Equipment</span> Solutions</h1>
-                    <p class="text-xl text-gray-700 mb-8 leading-relaxed">State-of-the-art medical equipment, maintenance services, and complete system integration.</p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="equipment" class="btn-primary px-8 py-4 rounded-full font-bold">View Equipment</a>
-                        <a href="contact" class="btn-secondary px-8 py-4 rounded-full font-bold">Request Quote</a>
-                    </div>
-                </div>
-            </div>
-            <figure class="half right w-1/2 relative overflow-hidden m-0">
-                <img src="assets/images/equipment/YFST-Y06-Hydraulic-Operating-table.jpg" alt="Operating table" class="slide-bg w-full h-full object-cover absolute inset-0">
-                <div class="overlay absolute inset-0 bg-gradient-to-l from-transparent to-black/20 pointer-events-none"></div>
-                <figcaption class="sr-only">Hydraulic operating table</figcaption>
-            </figure>
-        </article>
-
-        <!-- Slide 3 -->
-        <article class="split-slide flex w-full h-full" data-slide="2" role="group" aria-roledescription="slide" aria-label="System Integration">
-            <figure class="half left w-1/2 relative overflow-hidden m-0">
-                <img src="assets/images/equipment/hamilliton ventilation.png" alt="Ventilation system" class="slide-bg w-full h-full object-cover absolute inset-0">
-                <div class="overlay absolute inset-0 bg-gradient-to-r from-transparent to-black/30 pointer-events-none"></div>
-                <figcaption class="sr-only">Ventilation equipment</figcaption>
-            </figure>
-            <div class="half right w-1/2 bg-white flex items-center justify-center p-10">
-                <div class="text-center max-w-lg">
-                    <span class="inline-block px-4 py-2 bg-blue-600/10 text-blue-700 rounded-full text-sm font-semibold mb-4">System Integration</span>
-                    <h1 class="hero-title text-5xl md:text-6xl font-bold mb-6 leading-tight">Complete<br><span class="block">System</span> Integration</h1>
-                    <p class="text-xl text-gray-700 mb-8 leading-relaxed">Seamless integration of healthcare systems, equipment, and workflow optimization.</p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="services" class="btn-primary px-8 py-4 rounded-full font-bold">Integration Services</a>
-                        <a href="contact" class="btn-secondary px-8 py-4 rounded-full font-bold">Consultation</a>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <!-- Slide 4 -->
-        <article class="split-slide flex w-full h-full" data-slide="3" role="group" aria-roledescription="slide" aria-label="Training Programs">
-            <div class="half left w-1/2 bg-white flex items-center justify-center p-10">
-                <div class="text-center max-w-lg">
-                    <span class="inline-block px-4 py-2 bg-primary-teal/10 text-primary-teal rounded-full text-sm font-semibold mb-4">Professional Training</span>
-                    <h1 class="hero-title text-4xl md:text-5xl font-bold mb-6 leading-tight">Professional<br><span class="block">Training</span> Programs</h1>
-                    <p class="text-xl text-gray-700 mb-8 leading-relaxed">Comprehensive training programs for healthcare professionals and emergency response teams.</p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="training" class="btn-primary px-8 py-4 rounded-full font-bold">Training Programs</a>
-                        <a href="contact" class="btn-secondary px-8 py-4 rounded-full font-bold">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <figure class="half right w-1/2 relative overflow-hidden m-0">
-                <img src="assets/images/equipment/StockCake-Medical Device Display_1758320661.jpg" alt="Medical device display" class="slide-bg w-full h-full object-cover absolute inset-0">
-                <div class="overlay absolute inset-0 bg-gradient-to-l from-transparent to-black/20 pointer-events-none"></div>
-                <figcaption class="sr-only">Medical device display</figcaption>
-            </figure>
-        </article>
-
-    </div>
-
-    <!-- Controls -->
-    <div class="controls absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
-        <button class="split-dot w-3 h-3 rounded-full bg-white transition-all duration-300 active" data-slide="0" aria-label="Go to slide 1"></button>
-        <button class="split-dot w-3 h-3 rounded-full bg-white/50 transition-all duration-300" data-slide="1" aria-label="Go to slide 2"></button>
-        <button class="split-dot w-3 h-3 rounded-full bg-white/50 transition-all duration-300" data-slide="2" aria-label="Go to slide 3"></button>
-        <button class="split-dot w-3 h-3 rounded-full bg-white/50 transition-all duration-300" data-slide="3" aria-label="Go to slide 4"></button>
-    </div>
-
-    <button id="splitPrev" class="nav-arrow absolute left-6 top-1/2 transform -translate-y-1/2 p-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 z-30" aria-label="Previous slide">
-        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-    </button>
-    <button id="splitNext" class="nav-arrow absolute right-6 top-1/2 transform -translate-y-1/2 p-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 z-30" aria-label="Next slide">
-        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-    </button>
-
-    <!-- Scoped CSS to keep styles local and reliable -->
-    <style>
-    /* Container */
-    #splitSlider { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
-    .split-screen-slider { position: relative; }
-    .slides { position: relative; height: 100%; }
-
-    /* Slide base */
-    .split-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .6s ease-in-out; display: flex; }
-    .split-slide.active { opacity: 1; z-index: 20; }
-
-    .half { position: relative; }
-    .half .slide-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
-    .half .overlay { z-index: 2; }
-    .half > *:not(.slide-bg):not(.overlay) { position: relative; z-index: 3; }
-
-    /* Ensure content sits above image overlays */
-    .split-slide .right, .split-slide .left { display: flex; }
-
-    /* Dots & arrows */
-    .controls .split-dot.active, .controls .split-dot[aria-pressed="true"] { transform: scale(1.3); background-color: #ffffff; }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-        .split-slide { flex-direction: column; }
-        .half { width: 100% !important; height: 50%; }
-        .hero-title { font-size: 2rem !important; }
-    }
-
-    /* Buttons */
-    .btn-primary { background: #01c6a8; color: #fff; }
-    .btn-secondary { border: 2px solid #111827; color: #111827; background: transparent; }
-    </style>
-</section>
-    <!-- Slide 1: Emergency Care Excellence -->
+    <!-- Slide 0: EDIS (new, loads first) -->
     <div class="split-slide active flex h-full" data-slide="0">
+        <!-- Left Half - Image (EDIS) -->
+        <div class="left-half w-1/2 relative overflow-hidden">
+          <div class="absolute inset-0 bg-image bg-cover bg-center transition-all duration-1000 transform scale-110 hover:scale-100" 
+              style="background-image: url('assets/images/equipment/edis1.png');">
+          </div>
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black/30"></div>
+        </div>
+        
+        <!-- Right Half - Content -->
+    <div class="right-half w-1/2 bg-white flex items-center justify-center p-12">
+            <div class="text-center max-w-lg">
+                <div class="mb-6">
+                    <span class="inline-block px-4 py-2 bg-primary-green/10 text-primary-green rounded-full text-sm font-semibold mb-4">
+                        EDIS
+                    </span>
+                </div>
+                
+                <h1 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-400 via-teal-500 to-blue-500 bg-clip-text text-transparent mb-6 leading-tight">
+                    EDIS
+                    <span class="bg-gradient-to-r from-primary-green via-green-500 to-teal-400 bg-clip-text text-transparent block">Emergency Department Information System</span>
+                </h1>
+                
+                <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+                    A comprehensive, real-time platform that streamlines patient flow, triage, documentation and resource allocation across your emergency department.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="contact" class="px-8 py-4 bg-primary-green text-white rounded-full font-bold hover:bg-green-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Request a Demo
+                    </a>
+                    <a href="services" class="px-8 py-4 border-2 border-gray-900 text-gray-900 rounded-full font-bold hover:bg-gray-900 hover:text-white transition-all duration-300">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
         <!-- Left Half - Image -->
         <div class="left-half w-1/2 relative overflow-hidden">
           <div class="absolute inset-0 bg-image bg-cover bg-center transition-all duration-1000 transform scale-110 hover:scale-100" 
@@ -192,7 +86,7 @@
     </div>
 
     <!-- Slide 2: Medical Equipment -->
-    <div class="split-slide flex h-full" data-slide="1">
+    <div class="split-slide flex h-full" data-slide="2">
         <!-- Left Half - Content -->
     <div class="left-half w-1/2 bg-white flex items-center justify-center p-12">
             <div class="text-center max-w-lg">
@@ -241,7 +135,7 @@
     </div>
 
     <!-- Slide 3: System Integration -->
-    <div class="split-slide flex h-full" data-slide="2">
+    <div class="split-slide flex h-full" data-slide="3">
         <!-- Left Half - Image -->
         <div class="left-half w-1/2 relative overflow-hidden">
           <div class="absolute inset-0 bg-image bg-cover bg-center transition-all duration-1000 transform scale-110 hover:scale-100" 
@@ -288,7 +182,7 @@
     </div>
 
     <!-- Slide 4: Training Programs -->
-    <div class="split-slide flex h-full" data-slide="3">
+    <div class="split-slide flex h-full" data-slide="4">
         <!-- Left Half - Content -->
     <div class="left-half w-1/2 bg-white flex items-center justify-center p-12">
             <div class="text-center max-w-lg">
@@ -346,6 +240,7 @@
         <button class="split-dot w-3 h-3 rounded-full bg-white/50 transition-all duration-300" data-slide="1"></button>
         <button class="split-dot w-3 h-3 rounded-full bg-white/50 transition-all duration-300" data-slide="2"></button>
         <button class="split-dot w-3 h-3 rounded-full bg-white/50 transition-all duration-300" data-slide="3"></button>
+        <button class="split-dot w-3 h-3 rounded-full bg-white/50 transition-all duration-300" data-slide="4"></button>
     </div>
     
     <!-- Navigation Arrows -->

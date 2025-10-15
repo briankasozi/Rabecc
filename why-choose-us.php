@@ -7,19 +7,22 @@ include 'includes/header.php';
 $header_config = [
     'title' => 'Why Choose RABEC',
     'subtitle' => 'Discover the comprehensive reasons why healthcare facilities worldwide trust RABEC Emergency Care Consultancy for their emergency department transformation and improvement initiatives',
-    'background_image' => 'assets/images/equipment/StockCake-Hospital Monitoring Equipment_1758320673.jpg',
+    'background_image' => 'assets/images/util/favicon.png',
     'icon' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>',
     'badge_text' => 'Excellence & Trust',
     'gradient_from' => 'primary-teal',
     'gradient_via' => 'purple-900',
-    'gradient_to' => 'blue-900'
+    'gradient_to' => 'blue-900',
+    'background_opacity' => 0.5,
+    'background_size' => '50vw',
+    'background_repeat' => 'no-repeat'
 ];
 include 'includes/page-header.php';
 ?>
 
 <!-- Why Choose Us - All 6 Reasons -->
 <section class="py-16 bg-light-grey">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-watermark">
         <div class="text-center mb-16 fade-in">
             <h2 class="text-4xl font-bold text-gray-900 mb-4">Complete List of Advantages</h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">

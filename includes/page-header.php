@@ -26,6 +26,10 @@ $badge_text = $header_config['badge_text'] ?? 'RABEC Solutions';
 $gradient_from = $header_config['gradient_from'] ?? 'gray-900';
 $gradient_to = $header_config['gradient_to'] ?? 'blue-900';
 $gradient_via = $header_config['gradient_via'] ?? 'purple-900';
+// Optional background display overrides (allow pages to request larger/smaller watermark)
+$background_opacity = isset($header_config['background_opacity']) ? floatval($header_config['background_opacity']) : 0.3;
+$background_size = $header_config['background_size'] ?? 'cover';
+$background_repeat = $header_config['background_repeat'] ?? 'no-repeat';
 ?>
 
 <!-- Futuristic Page Header -->
@@ -33,7 +37,7 @@ $gradient_via = $header_config['gradient_via'] ?? 'purple-900';
     <!-- Animated Background -->
     <div class="absolute inset-0">
         <div class="absolute inset-0 bg-black opacity-40"></div>
-        <div class="absolute inset-0" style="background-image: url('<?php echo $background_image; ?>'); background-size: cover; background-position: center; opacity: 0.3;"></div>
+    <div class="absolute inset-0" style="background-image: url('<?php echo $background_image; ?>'); background-size: <?php echo $background_size; ?>; background-position: center; background-repeat: <?php echo $background_repeat; ?>; opacity: <?php echo $background_opacity; ?>;"></div>
         <!-- Floating Particles -->
         <div class="absolute inset-0">
             <div class="particle absolute w-2 h-2 bg-primary-teal rounded-full opacity-60 animate-pulse" style="top: 20%; left: 15%; animation-delay: 0s;"></div>

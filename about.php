@@ -7,18 +7,23 @@ include 'includes/header.php';
 $header_config = [
     'title' => 'About RABEC',
     'subtitle' => 'Transforming Emergency Care Through Innovation, Technology, and Human-Centered Solutions. Discover our mission, values, and commitment to revolutionizing healthcare worldwide',
-    'background_image' => 'assets/images/equipment/StockCake-Hospital Room Interior_1758320687.jpg',
+    'background_image' => 'assets/images/util/favicon.png',
     'icon' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>',
     'badge_text' => 'Our Story',
     'gradient_from' => 'primary-teal',
     'gradient_via' => 'blue-900',
+    // Make the favicon watermark more visible on this page header
+    'background_opacity' => 0.5,
+    // Use contain so the favicon image is clearly visible rather than tiled/covered
+    'background_size' => '50vw',
+    'background_repeat' => 'no-repeat',
     'gradient_to' => 'purple-900'
 ];
 include 'includes/page-header.php';
 ?>
 <!-- About Intro -->
 <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-watermark">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">About Us</h2>
@@ -133,14 +138,15 @@ include 'includes/page-header.php';
 
 <!-- Our Story -->
 <section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-watermark">
         <div class="text-center mb-10">
             <h3 class="text-3xl font-bold text-gray-900">Our Story</h3>
             <p class="text-gray-600 max-w-2xl mx-auto mt-4">The experience that sparked RABEC and the mission that drives our work across Sub-Saharan Africa.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-            <div class="prose max-w-none text-gray-700">
+            <div class="prose max-w-none text-gray-800 bg-white p-8 rounded-2xl shadow-md border border-gray-100">
+                <p class="text-lg text-gray-700 font-semibold mb-4">A short summary: Rabec began after a personal emergency exposed critical gaps in equipment, systems, and training—this experience shaped our mission to equip hospitals with the tools and processes that save lives.</p>
                 <p>
                     Rabec was founded out of a deeply personal experience. At 4 a.m., my brother suffered what was likely his seventh stroke. We rushed him to the emergency department of a referral hospital and encountered an overwhelming reality: the ward was crowded, patients competed for attention, and although healthcare workers were knowledgeable and dedicated, they were struggling with limited equipment and resources.
                 </p>
@@ -162,14 +168,15 @@ include 'includes/page-header.php';
                 </p>
             </div>
 
-            <div class="rounded-3xl overflow-hidden shadow-lg">
-                <img src="assets/images/equipment/StockCake-Emergency Room Scene_1758320646.jpg" alt="Emergency room" class="w-full h-80 object-cover sm:h-full">
-            </div>
+            <figure class="rounded-3xl overflow-hidden shadow-lg bg-gray-50">
+                <img src="assets/images/equipment/edis1.png" alt="Emergency Department Information System - EDIS" loading="lazy" class="w-full h-80 object-cover sm:h-full">
+                <figcaption class="p-4 text-sm text-gray-600">EDIS in action — tools and systems to coordinate emergency care.</figcaption>
+            </figure>
         </div>
     </div>
 </section>
 
-<!-- Impact / Stats -->
+<!-- Impact / Stats 
 <section class="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-10">
@@ -192,9 +199,9 @@ include 'includes/page-header.php';
         </div>
 
         <div class="text-center">
-            <p class="max-w-2xl mx-auto text-gray-200">We envision a region where every patient receives timely, efficient, and compassionate emergency care. Rabec pioneers services that transform how healthcare is delivered — from digital emergency department systems to capacity‑building programs nurturing the next generation of medical leaders.</p>
+            <p class="max-w-2xl mx-auto impact-lead">We envision a region where every patient receives timely, efficient, and compassionate emergency care. Rabec pioneers services that transform how healthcare is delivered — from digital emergency department systems to capacity-building programs nurturing the next generation of medical leaders.</p>
         </div>
-    </div>
+    </div>-->
 </section>
 
 <!-- CTA -->

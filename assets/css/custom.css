@@ -401,6 +401,73 @@ body {
     will-change: transform, opacity, box-shadow;
 }
 
+/* Section watermark helper: place a semi-transparent, non-interactive favicon behind section content */
+/* per-section watermark removed; using global body.with-watermark instead */
+
+/* Impact / Stats lead paragraph: stronger contrast and readability over images/watermarks */
+.impact-lead {
+    color: #ffffff !important;
+    font-size: 1.125rem; /* ~18px */
+    line-height: 1.8;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    opacity: 0.98;
+}
+.impact-lead.small-screen {
+    font-size: 1rem;
+}
+
+/* Site-wide watermark applied to pages that opt in via body class (not index) */
+body.with-watermark::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    /* use the translucent texture as the site-wide watermark */
+    background-image: url('../images/util/tran-bg.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50vw; /* large centered watermark */
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: -1; /* sit behind all page content */
+}
+
+/* Stronger watermark variant for highlighted pages (e.g., about.php) */
+body.with-watermark-strong::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url('../images/util/tran-bg.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 60vw; /* even larger */
+    opacity: 0.22; /* stronger visibility */
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Helper to place a subtle watermark inside text containers */
+.text-watermark {
+    position: relative;
+    overflow: visible;
+}
+.text-watermark::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    height: 40vw;
+    background-image: url('../images/util/tran-bg.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+}
+.text-watermark > * { position: relative; z-index: 1; }
+
 /* Glass Effect Enhancements */
 .backdrop-blur-sm {
     backdrop-filter: blur(8px) saturate(180%);
@@ -1299,4 +1366,31 @@ nav {
 /* Slight lift on hover of the button group */
 .fixed.right-6 .relative:hover .whatsapp-label {
     transform: translateY(-4px) scale(1.02);
+}
+
+/* Favicon watermark across all pages: centered, semi-transparent, covers ~40% of viewport */
+body::before {
+    content: '';
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw; /* about 50% of viewport width */
+    height: 50vw; /* keep it square */
+    max-width: 1000px;
+    max-height: 1000px;
+    background-image: url('../images/util/favicon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.12; /* increased visibility */
+    pointer-events: none; /* don't block interactions */
+    z-index: 0; /* behind all content */
+    mix-blend-mode: lighten; /* subtle blending with backgrounds */
+}
+
+/* Ensure the watermark doesn't overlap fixed nav or popups visually; place content above it */
+header, nav, .hero-slider, .slide, .site-content, main, footer, .modal, .fixed, .sticky {
+    position: relative;
+    z-index: 1;
 }
