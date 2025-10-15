@@ -396,7 +396,8 @@ include 'includes/page-header.php';
         toastIcon.className = 'flex-shrink-0 mr-3 w-10 h-10 rounded-full bg-red-50 flex items-center justify-center';
     }
 
-    // show
+    // show: ensure display:block (in case previous hide used inline style)
+    toast.style.display = 'block';
     toast.classList.remove('hidden');
     toast.classList.add('animate-fade-in');
 
@@ -409,9 +410,14 @@ include 'includes/page-header.php';
     });
 
     function hideToast(){
+        // prefer classes for transitions; keep display change after transition
         toast.classList.add('opacity-0');
         setTimeout(function(){
             toast.style.display = 'none';
+            // clean up classes so future shows reuse the same animation
+            toast.classList.remove('animate-fade-in', 'opacity-0');
+            // keep 'hidden' class for initial state
+            toast.classList.add('hidden');
         }, 300);
     }
 })();

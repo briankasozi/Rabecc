@@ -94,7 +94,15 @@ try {
     $smtp_host = MAIL_SMTP_HOST;
     $smtp_port = MAIL_SMTP_PORT ?: 587;
     $smtp_user = MAIL_SMTP_USER;
-    $smtp_password = MAIL_SMTP_PASSWORD;
+    // Support either MAIL_SMTP_PASSWORD or RABECC_SMTP_PASSWORD env var (backward compatible)
+    $smtp_password = defined('MAIL_SMTP_PASSWORD') ? MAIL_SMTP_PASSWORD : '';
+    // Allow an alternate environment-specific name used elsewhere in this project
+    $alt = getenv('RABECC_SMTP_PASSWORD');
+    if ($alt !== false && $alt !== '') {
+        $smtp_password = $alt;
+    }
+    // Normalize password: remove whitespace and any leading colon the user may have pasted
+    $smtp_password = ltrim(preg_replace('/\s+/', '', (string)$smtp_password), ':');
     $smtp_secure = MAIL_SMTP_SECURE; // 'tls' or 'ssl' or ''
 
     $use_smtp = !empty($smtp_host) && !empty($smtp_user) && !empty($smtp_password);

@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isTransitioning) {
                 goToSlide(currentSlide + 1);
             }
-        }, 5000); // 5 seconds for better pacing with animations
+        }, 3000); // 3 seconds autoplay for improved readability
     }
     
     function stopAutoSlide() {

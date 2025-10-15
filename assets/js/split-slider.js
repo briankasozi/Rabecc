@@ -134,7 +134,7 @@ class SplitScreenSlider {
         this.stopAutoSlide(); // Clear any existing interval
         this.autoSlideInterval = setInterval(() => {
             this.nextSlide();
-        }, 10000); // 10 seconds - auto scroll every 10 seconds
+        }, 3000); // 3 seconds - auto scroll every 3 seconds for better readability
     }
     
     stopAutoSlide() {

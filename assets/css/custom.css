@@ -473,33 +473,14 @@ body {
 }
 
 .hero-title {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 15px rgba(1, 198, 168, 0.4);
-    background: linear-gradient(45deg, #ffffff, #01c6a8, #60a5fa, #ffffff, #01c6a8);
-    background-size: 400% 400%;
-    animation: gradientShift 3s ease-in-out infinite, textPulse 4s ease-in-out infinite;
-    background-clip: text;
+    /* Static gradient: white -> green -> light blue */
+    background: linear-gradient(90deg, #ffffff 0%, #01c6a8 55%, #60a5fa 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
-    transform: translateZ(0);
-    will-change: background-position, text-shadow;
-}
-
-@keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    25% { background-position: 50% 0%; }
-    50% { background-position: 100% 50%; }
-    75% { background-position: 50% 100%; }
-}
-
-@keyframes textPulse {
-    0%, 100% { text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: scale(1); }
-    50% { text-shadow: 2px 2px 6px rgba(0,0,0,0.6); transform: scale(1.02); }
-}
-
-.hero-title {
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    transform: translateZ(0);
-    will-change: text-shadow;
+    color: transparent; /* fallback */
+    text-shadow: none; /* remove glowing shadow */
+    animation: none !important;
 }
 .hero-buttons a::before {
     content: '';
@@ -1248,4 +1229,74 @@ nav {
    by lowering their z-index when the nav is sticky */
 .hero-slider, .hero-slider::before, .hero-slider::after, .slide, .slide::before {
     z-index: 1 !important;
+}
+
+/* Ensure the contact form toast floats above the sticky navigation and
+   is not clipped or hidden. We set a very large z-index and move the
+   toast below the nav on larger screens. On small screens keep it near
+   the top but inset from the edges. */
+#contact-toast {
+    position: fixed !important; /* reinforce fixed positioning */
+    z-index: 100000 !important; /* must be greater than nav's 9999 */
+    top: 4.5rem !important; /* sit below the sticky nav */
+    right: 1.25rem !important;
+    left: auto !important;
+    pointer-events: auto !important;
+}
+
+/* Small animation helper applied by JS when showing the toast. This
+   ensures the toast becomes visible even if previous hide used an
+   inline style (display:none). We set display:block !important so
+   JS-driven show always overrides inline hiding. */
+#contact-toast.animate-fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    display: block !important;
+}
+
+/* Make the inner toast responsive on small viewports */
+@media (max-width: 768px) {
+    #contact-toast {
+        top: 4rem !important; /* keep some space below small header */
+        right: 0.75rem !important;
+        left: 0.75rem !important;
+    }
+    #contact-toast-inner {
+        width: auto !important;
+        max-width: calc(100% - 1.5rem) !important;
+    }
+}
+
+/* WhatsApp floating label styling */
+.whatsapp-label {
+    display: inline-block;
+    background: linear-gradient(90deg, #10b981, #01c6a8);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    box-shadow: 0 8px 20px rgba(1, 198, 168, 0.18);
+    transform-origin: bottom center;
+    transition: transform 200ms ease, opacity 200ms ease;
+    opacity: 1;
+}
+
+.whatsapp-label::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #01c6a8;
+}
+
+/* Slight lift on hover of the button group */
+.fixed.right-6 .relative:hover .whatsapp-label {
+    transform: translateY(-4px) scale(1.02);
 }
