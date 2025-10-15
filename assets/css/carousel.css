@@ -1,0 +1,107 @@
+/* Equipment Carousel Styles */
+.equipment-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-container {
+    display: flex;
+    animation: scroll-right-to-left 20s linear infinite;
+    width: calc(200% + 2rem); /* Double width to accommodate duplicate items */
+}
+
+.carousel-container:hover {
+    animation-play-state: paused;
+}
+
+.carousel-item {
+    flex: 0 0 calc(25% - 1.5rem); /* Show 4 items at a time */
+    margin-right: 2rem;
+}
+
+.carousel-item:last-child {
+    margin-right: 0;
+}
+
+/* Animation keyframes for right to left scrolling */
+@keyframes scroll-right-to-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .carousel-item {
+        flex: 0 0 calc(33.333% - 1.5rem); /* Show 3 items on tablets */
+    }
+    
+    .carousel-container {
+        width: calc(166.666% + 1.33rem);
+    }
+    
+    @keyframes scroll-right-to-left {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-33.333%);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        flex: 0 0 calc(50% - 1rem); /* Show 2 items on mobile */
+    }
+    
+    .carousel-container {
+        width: calc(200% + 1rem);
+    }
+    
+    @keyframes scroll-right-to-left {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        flex: 0 0 calc(100% - 0.5rem); /* Show 1 item on very small screens */
+        margin-right: 1rem;
+    }
+    
+    .carousel-container {
+        width: calc(200% + 0.5rem);
+    }
+}
+
+/* Smooth fade effect at edges */
+.equipment-carousel::before,
+.equipment-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.equipment-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(243, 244, 246, 1), rgba(243, 244, 246, 0));
+}
+
+.equipment-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(243, 244, 246, 1), rgba(243, 244, 246, 0));
+}
