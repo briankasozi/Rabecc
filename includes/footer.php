@@ -16,10 +16,10 @@
                         <span class="font-semibold">Email:</span> info@rabecc.com
                     </p>
                     <p class="text-gray-300">
-                        <span class="font-semibold">Phone:</span> +1 (555) 123-4567
+                        <span class="font-semibold">Phone:</span> +256 (788) 515-052
                     </p>
                     <p class="text-gray-300">
-                        <span class="font-semibold">Address:</span> 123 Healthcare Avenue, Medical District, City 12345
+                        <span class="font-semibold">Address:</span> Kayiwa's Galleria, Room L1-K02, Edward Avenue, Masaka City
                     </p>
                 </div>
             </div>
