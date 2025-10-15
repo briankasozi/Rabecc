@@ -38,6 +38,7 @@
     
     <!-- Custom JavaScript -->
     <script src="assets/js/slider.js" defer></script>
+    <script src="assets/js/split-slider.js" defer></script>
     
     <!-- Source Protection Script -->
     <script>

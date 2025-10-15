@@ -24,21 +24,29 @@ body {
 }
 
 /* ==================================================
-   Overrides: remove gradients and purple colors site-wide
-   - Disable gradient background utilities
-   - Map any 'purple' utility classes to the site's primary teal color
-   ==================================================*/
+    Overrides: remove gradients and purple colors site-wide
+    - Disable gradient background utilities for non-text elements
+    - Map any 'purple' utility classes to the site's primary teal color
+    NOTE: The original rules were overly broad and removed gradients
+    used intentionally for hero text/backgrounds. Narrow the selector
+    so elements using text gradients (bg-clip-text) keep their styling.
+    ==================================================*/
 
-/* Neutralize Tailwind gradient utility classes by removing background-image and forcing a solid background */
-[class*="bg-gradient-to"], [class*="bg-gradient"] {
+/* Neutralize Tailwind gradient utility classes for non-text elements only
+    Keep elements with `bg-clip-text` (text gradients) intact. Also avoid
+    matching classes that contain 'hero' to reduce impact on hero components. */
+[class*="bg-gradient-to"]:not(.bg-clip-text):not([class*="hero"]):not(.absolute),
+[class*="bg-gradient"]:not(.bg-clip-text):not([class*="hero"]):not(.absolute) {
+    /* Avoid neutralizing absolutely-positioned overlays (they use bg-gradient utilities)
+       which would otherwise become solid white and occlude background images. */
     background-image: none !important;
     background: #ffffff !important;
 }
 
-/* Neutralize inline linear-gradient styles (fallback) */
-[style*="linear-gradient"] {
-    background-image: none !important;
-}
+/* NOTE: Removed the blanket neutralization of inline linear-gradient styles
+    because it hid intended decorative gradients (for example, text or hero
+    overlay gradients). If a specific element needs disabling, add a scoped
+    rule or a helper class instead. */
 
 /* Replace purple text/background utilities with primary teal */
 [class*="purple"], [class*="text-purple"], [class*="bg-purple"], [class*="from-purple"], [class*="via-purple"], [class*="to-purple"] {
@@ -204,6 +212,16 @@ body {
 .hero-slider > * {
     position: relative;
     z-index: 2;
+/* Ensure explicit background-image blocks in split slider are visible
+   and stack correctly above background overlays but below content */
+.bg-image {
+    z-index: 0; /* place behind content (which uses z-index >=1) */
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    opacity: 1 !important;
+    will-change: transform, opacity;
+}
 }
 
 /* Decorative corner elements styling */
