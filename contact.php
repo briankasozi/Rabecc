@@ -210,9 +210,10 @@ include 'includes/page-header.php';
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-1">Our Office</h3>
                             <p class="text-gray-600">
-                                123 Healthcare Avenue<br>
-                                Medical District<br>
-                                City, State 12345
+                                Kayiwa's Galleria<br>
+                                Room L1-K02<br>
+                                Edward Avenue, Masaka City<br>
+                                
                             </p>
                         </div>
                     </div>
@@ -227,8 +228,8 @@ include 'includes/page-header.php';
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-1">Phone</h3>
                             <p class="text-gray-600">
-                                <a href="tel:+15551234567" class="hover:text-primary-teal transition-colors">+1 (555) 123-4567</a><br>
-                                <span class="text-sm text-gray-500">Monday - Friday, 8:00 AM - 6:00 PM EST</span>
+                                <a href="tel:+256788515052" class="hover:text-primary-teal transition-colors">+256 (788) 515-052</a><br>
+                                <span class="text-sm text-gray-500">Monday - Friday, 8:00 AM - 6:00 PM EAT</span>
                             </p>
                         </div>
                     </div>
@@ -259,7 +260,7 @@ include 'includes/page-header.php';
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-1">Emergency Consultation</h3>
                             <p class="text-gray-600">
-                                <a href="tel:+15551234567" class="hover:text-primary-teal transition-colors">+1 (555) 123-4567</a><br>
+                                <a href="tel:+256788515052" class="hover:text-primary-teal transition-colors">+256 (788) 515-052</a><br>
                                 <span class="text-sm text-gray-500">24/7 emergency consultation hotline</span>
                             </p>
                         </div>
